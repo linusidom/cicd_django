@@ -15,6 +15,18 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 
 MIDDLEWARE.insert(1,'whitenoise.middleware.WhiteNoiseMiddleware')
 
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'myproject',
+        'USER': 'myprojectuser',
+        'PASSWORD': 'password123',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CLOUDINARY_STORAGE = {
