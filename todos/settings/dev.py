@@ -14,7 +14,7 @@ STATIC_ROOT = BASE_DIR / 'static_root'
 STATICFILES_DIRS = [STATIC_DIR]
 
 # SECURITY WARNING: update this when you have the production host
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = []
 
 DATABASES = {
     'default': {

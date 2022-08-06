@@ -32,14 +32,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG = False
 
 # DEBUG = os.environ['DEBUG']
 
 # allowed_hosts = os.environ['ALLOWED_HOSTS']
 # allowed_hosts = allowed_hosts.strip('][\'').split(', ')
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
