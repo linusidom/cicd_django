@@ -17,28 +17,32 @@ import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+print('BASE',BASE_DIR)
+
 TEMPLATES_DIR = BASE_DIR / 'templates'
-STATIC_DIR = 'static'
-STATICFILES_DIRS = [STATIC_DIR,]
+# STATIC_DIR = 'static'
+STATIC_ROOT = BASE_DIR / 'static'
+STATIC_URL = 'static/'
+
+# STATICFILES_DIRS = [STATIC_DIR,STATIC_ROOT]
 
 
-load_dotenv()
-env = os.environ.get('ALLOWED_HOSTS')
-res = env.strip('][\'').split(', ')
-print(type(res))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-m$(ebg1(azo86_-0hy2%gwk6u2mkq2+*3x_33uxk&=h-gh3rfh'
-SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = res
+
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+# DEBUG = os.environ['DEBUG']
+
+# allowed_hosts = os.environ['ALLOWED_HOSTS']
+# allowed_hosts = allowed_hosts.strip('][\'').split(', ')
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -129,7 +133,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
