@@ -1,4 +1,8 @@
 {% extends 'base.html'%}
+{% load static %}
+{% block css_style %}
+<link rel="stylesheet" href="{% static 'posts/css/style.css' %}" type="text/css" />
+{% endblock %}
 
 {% block content %}
 
@@ -11,6 +15,11 @@
         <div class="card">
             <h3><a href="{% url 'posts:post_detail' pk=post.pk %}">{{post.title}}</a> </h3>
             <p>{{post.message}}</p>
+            {% if post.image %}
+            <div class="img">
+                <img class="w-100" src="{{post.image.url}}" alt="">
+            </div>
+            {% endif %}
             <button><a href="{% url 'posts:post_delete' pk=post.pk %}">Delete</a></button>
         </div>
     {% endfor %}
