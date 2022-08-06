@@ -13,6 +13,3 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1']
 MIDDLEWARE.insert(1,'whitenoise.middleware.WhiteNoiseMiddleware')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-
-print(MIDDLEWARE)
