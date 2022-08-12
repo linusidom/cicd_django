@@ -1,14 +1,14 @@
 pipeline {
   agent any
   stages {
-    stage('Test'){
-      steps {
-        echo 'Test' 
-      }
-    }
     stage('Build'){
       steps {
-        echo 'Build'
+        sh 'pip install -r requirements.txt' 
+      }
+    }
+    stage('Test'){
+      steps {
+        sh 'python3 manage.py test --settings=todos.settings.prod'
       }
     }
     stage('Deploy') {
