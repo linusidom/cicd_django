@@ -29,4 +29,4 @@ jobs:
 
     - name: Test with pytest
       run: |
-        python manage.py test --settings=todos.settings.dev
+        python manage.py test --settings=todos.settings.prod
