@@ -8,12 +8,16 @@ pipeline {
     }
     stage('Test'){
       steps {
-        sh 'python3 manage.py test --settings=todos.settings.prod'
+        echo 'python3 manage.py test --settings=todos.settings.prod'
       }
     }
     stage('Deploy') {
       steps { 
-        echo 'Deploy'
+        sh 'ssh johndoe@192.168.56.109 -oStrictHostKeyChecking=no \
+        git pull \
+        cd cicd_django \
+        sudo systemctl restart nginx \
+        sudo systemctl restart gunicorn'
       }
     }
   }
