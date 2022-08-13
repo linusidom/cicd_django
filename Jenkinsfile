@@ -13,7 +13,7 @@ pipeline {
     }
     stage('Deploy') {
       steps { 
-        sh 'ssh johndoe@192.168.56.109 -oStrictHostKeyChecking=no \
+        sh 'ssh johndoe@192.168.56.105 -oStrictHostKeyChecking=no \
         git pull \
         cd cicd_django \
         sudo systemctl restart nginx \
