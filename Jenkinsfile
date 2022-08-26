@@ -3,21 +3,17 @@ pipeline {
   stages {
     stage('Build'){
       steps {
-        sh 'pip install -r requirements.txt' 
+        echo 'Build'
       }
     }
     stage('Test'){
       steps {
-        echo 'python3 manage.py test --settings=todos.settings.prod'
+        echo 'Test'
       }
     }
     stage('Deploy') {
       steps { 
-        sh 'ssh johndoe@192.168.56.105 -oStrictHostKeyChecking=no \
-        git pull \
-        cd cicd_django \
-        sudo systemctl restart nginx \
-        sudo systemctl restart gunicorn'
+        echo "Deploy"
       }
     }
   }
